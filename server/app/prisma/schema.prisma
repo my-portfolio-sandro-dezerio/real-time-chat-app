@@ -1,0 +1,14 @@
+datasource db {
+    provider = "mongodb"
+    url = "mongodb://localhost:27017/real-time-chat-app"
+}
+
+generator client {
+    provider = "prisma-client-js"
+}
+
+model Room {
+    id String @id @default(auto()) @map("_id") @db.ObjectId
+    title String
+    description String
+}
